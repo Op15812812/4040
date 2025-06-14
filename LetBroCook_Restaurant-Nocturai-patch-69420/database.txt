@@ -1,0 +1,114 @@
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+CREATE TABLE `account` (
+  id int(11) NOT NULL,
+  username varchar(50) NOT NULL,
+  password varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+INSERT INTO account (id, username, password) VALUES
+(4, 'admin', '$2y$10$M6jTylBIvJzz6qPtdLrjaurVc6tAxphBbc4BrefcPX74y14O7N4oG');
+
+CREATE TABLE `分類` (
+  分類編號 varchar(6) NOT NULL,
+  分類名稱 varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+INSERT INTO 分類 (分類編號, 分類名稱) VALUES
+('C001', '主餐'),
+('C002', '飲料'),
+('C003', '甜點');
+
+CREATE TABLE `會員` (
+  會員編號 int(11) NOT NULL,
+  使用者帳號 varchar(100) NOT NULL,
+  姓名 varchar(100) DEFAULT NULL,
+  電話 varchar(20) DEFAULT NULL,
+  電子郵件 varchar(100) DEFAULT NULL,
+  註冊時間 datetime DEFAULT current_timestamp(),
+  密碼 varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+INSERT INTO 會員 (會員編號, 使用者帳號, 姓名, 電話, 電子郵件, 註冊時間, 密碼) VALUES
+(6, '1', '1', '1', '1@mial', '2025-06-10 21:21:49', '$2y$10$jXkEGD9gZZZ6S5wkWKsuAOY/H691k2X3D0wo20f2FvV8HB4NO62oW');
+
+CREATE TABLE `訂單` (
+  訂單編號 int(11) NOT NULL,
+  訂單內容 varchar(100) NOT NULL,
+  總金額 int(11) NOT NULL,
+  下單時間 datetime DEFAULT current_timestamp(),
+  會員帳號 varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+INSERT INTO 訂單 (訂單編號, 訂單內容, 總金額, 下單時間, 會員帳號) VALUES
+(9, '林檎布丁 x 1\n', 20, '2025-06-10 22:15:13', '1'),
+(10, '林檎布丁 x 1\n', 20, '2025-06-10 22:16:32', '1');
+
+CREATE TABLE `訂單明細` (
+  訂單編號 char(6) NOT NULL,
+  餐點編號 char(5) NOT NULL,
+  數量 int(11) NOT NULL,
+  價格 int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+INSERT INTO 訂單明細 (訂單編號, 餐點編號, 數量, 價格) VALUES
+('1', 'M004', 2, 0),
+('10', 'M003', 1, 0),
+('3', 'M009', 1, 0),
+('4', 'M006', 1, 0),
+('5', 'M002', 1, 0),
+('6', 'M002', 2, 0),
+('7', 'M003', 1, 0),
+('8', 'M004', 1, 0),
+('9', 'M003', 1, 0);
+
+CREATE TABLE `餐點` (
+  餐點編號 char(5) NOT NULL,
+  餐點名稱 varchar(50) NOT NULL,
+  分類名稱 varchar(6) NOT NULL,
+  價格 int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+INSERT INTO 餐點 (餐點編號, 餐點名稱, 分類名稱, 價格) VALUES
+('M001', '滷肉飯', '主餐', 60),
+('M002', 'QQㄋㄟㄋㄟ好喝到咩噗茶', '飲料', 75),
+('M003', '林檎布丁', '甜點', 20),
+('M004', '昏睡紅茶(致死量)', '飲料', 10),
+('M005', '黑色高級轎車蛋糕(服務生給出的和解條件是...)', '甜點', 114),
+('M006', '橡木蛋糕捲', '甜點', 500),
+('M007', '蘇打豆兒汁', '飲料', 35),
+('M008', '薩卡班蓋飯', '主餐', 120),
+('M009', '三倍Ice Cream', '甜點', 149),
+('M010', '優酸乳嚼檸檬', '飲料', 100000);
+
+
+ALTER TABLE account
+  ADD PRIMARY KEY (id),
+  ADD UNIQUE KEY username (username);
+
+ALTER TABLE 分類
+  ADD PRIMARY KEY (分類編號);
+
+ALTER TABLE 會員
+  ADD PRIMARY KEY (會員編號),
+  ADD UNIQUE KEY 使用者帳號 (使用者帳號);
+
+ALTER TABLE 訂單
+  ADD PRIMARY KEY (訂單編號);
+
+ALTER TABLE 訂單明細
+  ADD PRIMARY KEY (訂單編號,餐點編號);
+
+ALTER TABLE 餐點
+  ADD PRIMARY KEY (餐點編號);
+
+
+ALTER TABLE account
+  MODIFY id int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+ALTER TABLE 會員
+  MODIFY 會員編號 int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+ALTER TABLE 訂單
+  MODIFY 訂單編號 int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;

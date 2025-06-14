@@ -1,0 +1,83 @@
+body {
+            font-family: "微軟正黑體", sans-serif;
+            background-color: #ffe3bb;
+            margin: 0;
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .login-container {
+            background-color: #fffaf0;
+            padding: 40px 50px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            width: 320px;
+            text-align: center;
+        }
+        h2 {
+            color: #a0522d;
+            margin-bottom: 30px;
+            font-size: 2em;
+        }
+        label {
+            display: block;
+            text-align: left;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #666;
+        }
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 10px 12px;
+            margin-bottom: 20px;
+            border: 1.8px solid #ffb347;
+            border-radius: 8px;
+            font-size: 1em;
+            transition: border-color 0.3s;
+        }
+        input[type="text"]:focus, input[type="password"]:focus {
+            border-color: #ff8c00;
+            outline: none;
+        }
+        button {
+            background-color: #ffb347;
+            color: white;
+            font-weight: 700;
+            padding: 12px 0;
+            border: none;
+            border-radius: 8px;
+            width: 100%;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #ff8c00;
+        }
+        .error-message {
+            color: #cc0000;
+            margin-top: 15px;
+            font-weight: 600;
+        }
+        .back-link {
+            margin-top: 25px;
+            display: inline-block;
+            color: #ffb347;
+            font-weight: 700;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .back-link:hover {
+            color: #ff8c00;
+        }
+     .login-container p a {
+    color: #007bff;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.login-container p a:hover {
+    text-decoration: underline;
+}

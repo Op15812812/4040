@@ -1,0 +1,50 @@
+        body {
+            font-family: "微軟正黑體", sans-serif;
+            text-align: center;
+            background-color: #fffdf5;
+            margin: 0;
+            padding: 50px;
+        }
+        .top-right {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+        .login-button {
+            padding: 8px 12px;
+            background-color: #555;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+        .login-button:hover {
+            background-color: #333;
+        }
+        h1 {
+            font-size: 3em;
+            color: #a0522d;
+        }
+        .menu {
+            margin-top: 40px;
+        }
+        a.button {
+            display: inline-block;
+            margin: 15px;
+            padding: 15px 30px;
+            background-color: #ffb347;
+            color: white;
+            font-size: 1.2em;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        a.button:hover {
+            background-color: #ff8c00;
+        }
+        .register-button:hover {
+    background-color: #e6b800; /* 比原本的 #f1c40f 再深一點 */
+    color: #000; /* 保持文字顏色一致 */
+}
+
+        

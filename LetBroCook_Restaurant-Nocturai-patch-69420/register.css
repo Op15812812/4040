@@ -1,0 +1,41 @@
+    body {
+        font-family: "微軟正黑體", sans-serif;
+        background-color: #fff3e0; /* 淺橘色 */
+        margin: 0;
+        padding: 0;
+    }
+    .register-box {
+        background: #ffe3bb;
+        padding: 30px 40px;
+        border-radius: 12px;
+        box-shadow: 0 0 12px rgba(0,0,0,0.1);
+        width: 360px;
+        text-align: center;
+        margin: auto;
+        margin-top: 100px;
+    }
+    input {
+        width: 100%;
+        padding: 10px;
+        margin: 8px 0;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        font-size: 16px;
+    }
+    button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+    .error-msg {
+        color: red;
+        margin-top: 10px;
+    }
+    .success-msg {
+        color: green;
+        margin-top: 10px;
+    }
